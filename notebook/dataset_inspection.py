@@ -35,3 +35,41 @@ print("Number of duplicate rows:", df.duplicated().sum())
 
 print("\n--- Statistical Summary ---")
 print(df.describe(include="all"))
+
+
+# Step 5: Validate and prepare the dataset
+
+# Convert Date column to datetime format
+
+df["Date"] = pd.to_datetime(df["Date"], errors="coerce")
+
+# Check whether any dates failed to convert
+
+print("\n--- Invalid Dates ---")
+print("Invalid date values:", df["Date"].isna().sum())
+
+# Check for invalid numeric values
+
+print("\n--- Numeric Validation ---")
+print("Invalid ages:", ((df["Age"] < 0) | (df["Age"] > 120)).sum())
+print("Invalid quantities:", (df["Quantity"] <= 0).sum())
+print("Invalid prices:", (df["Price per Unit"] < 0).sum())
+print("Invalid transaction amounts:", (df["Total Amount"] < 0).sum())
+
+# Check the relationship between quantity, price and amount
+
+df["Calculated Amount"] = df["Quantity"] * df["Price per Unit"]
+
+print("\n--- Sales Amount Validation ---")
+print("Rows where Total Amount differs from Quantity × Price per Unit:",
+(df["Total Amount"] != df["Calculated Amount"]).sum())
+
+# Display the updated data types
+
+print("\n--- Updated Data Types ---")
+print(df.dtypes)
+
+# Display the prepared dataset
+
+print("\n--- Prepared Dataset ---")
+print(df.head())
