@@ -79,4 +79,78 @@ plt.tight_layout()
 plt.savefig("visualizations/monthly_sales_trend.png", dpi=300, bbox_inches="tight")
 plt.show()
 
+# --------------------------------
+# Chart 4: Quantity Sold by Category
+# --------------------------------
+
+# Calculate total quantity sold for each category
+category_quantity = df.groupby("Product Category")["Quantity"].sum()
+
+# Create a bar chart
+plt.figure(figsize=(8, 5))
+category_quantity.plot(kind="bar")
+
+# Add title and labels
+plt.title("Quantity Sold by Product Category")
+plt.xlabel("Product Category")
+plt.ylabel("Total Quantity Sold")
+plt.xticks(rotation=0)
+
+# Save the chart
+plt.tight_layout()
+plt.savefig(
+    "visualizations/quantity_by_category.png",
+    dpi=300,
+    bbox_inches="tight"
+)
+
+# Display the chart
+plt.show()
+
+# --------------------------------
+# Chart 5: Sales by Customer Age Group
+# --------------------------------
+
+# Create age groups
+df["Age Group"] = pd.cut(
+    df["Age"],
+    bins=[0, 20, 30, 40, 50, 60, 120],
+    labels=[
+        "Under 20",
+        "21-30",
+        "31-40",
+        "41-50",
+        "51-60",
+        "Above 60"
+    ],
+    include_lowest=True
+)
+
+# Calculate total sales for each age group
+age_group_sales = df.groupby(
+    "Age Group",
+    observed=False
+)["Total Amount"].sum()
+
+# Create a bar chart
+plt.figure(figsize=(9, 5))
+age_group_sales.plot(kind="bar")
+
+# Add title and labels
+plt.title("Total Sales by Customer Age Group")
+plt.xlabel("Customer Age Group")
+plt.ylabel("Total Sales (₹)")
+plt.xticks(rotation=0)
+
+# Save the chart
+plt.tight_layout()
+plt.savefig(
+    "visualizations/sales_by_age_group.png",
+    dpi=300,
+    bbox_inches="tight"
+)
+
+# Display the chart
+plt.show()
+
 
