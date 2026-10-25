@@ -55,3 +55,31 @@ The initial EDA identified differences in revenue across product categories, pur
 These findings provide a foundation for further analysis and visualizations. The next stage will use charts to make the results easier to understand and communicate.
 
 The findings describe patterns in this dataset and do not, by themselves, establish the causes of those patterns.
+## Business Insights
+
+1. **Highest Revenue Category:** Electronics generated the highest sales at ₹156,905, followed by Clothing at ₹155,580 and Beauty at ₹143,515.
+
+2. **Highest Quantity Sold:** Clothing recorded the highest quantity sold, with 894 units. Electronics recorded 849 units, while Beauty recorded 771 units.
+
+3. **Sales by Gender:** Female customers contributed ₹232,840 (approximately 51.1% of total sales), while male customers contributed ₹223,160 (approximately 48.9%).
+
+4. **Highest Monthly Sales:** May 2023 recorded the highest monthly sales of ₹53,150.
+
+5. **Lowest Monthly Sales in 2023:** September recorded the lowest monthly sales among the reported months of 2023, at ₹23,620.
+
+## Business Recommendations
+
+1. **Improve Electronics Inventory Planning:** Monitor popular electronic products and maintain sufficient stock to support demand.
+
+2. **Increase Clothing Revenue:** Explore product bundles, seasonal promotions, and discounts to improve clothing sales.
+
+3. **Use Inclusive Marketing:** Since sales are nearly evenly distributed by gender, develop campaigns that appeal to both male and female customers.
+
+4. **Investigate Monthly Trends:** Examine possible reasons for lower sales in September 2023 and identify opportunities to improve performance during slower months.
+
+5. **Verify January 2024 Data:** January 2024 recorded only ₹1,530 in sales. Check whether the dataset contains a complete month's data before drawing conclusions.
+
+## Conclusion
+
+The dataset contains 1,000 retail transactions with total sales of ₹456,000. Electronics generated the highest revenue, while Clothing had the highest quantity sold. Sales were distributed almost equally between male and female customers. These findings can support inventory planning, marketing decisions, and sales monitoring.
+
